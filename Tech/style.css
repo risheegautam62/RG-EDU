@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.logo{
+    transform: rotate(-5deg);
+}
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0,163,158);
+}
+
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: rgb(0,163,158);
+}
+
+.main-nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    color: rgb(0,163,158);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::before,
+.main-nav ul li a.active::before {
+    width: 100%;
+}
+
+.hamburger {
+    font-size: 30px;
+    position: fixed;
+    top: 14px;
+    right: 30px;
+    display: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 350px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: -350px;
+    background-color: rgb(177,217,196);
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar.open {
+    right: 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    border-bottom: 2px solid #eee;
+    margin-right: 20px;
+  }
+  
+  .sidebar ul li a {
+    padding: 15px 0;
+    text-decoration: none;
+    font-size: 18px;
+    color: #4b4b4b;
+    display: block;
+    text-align: end;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 768px) {
+    nav ul {
+      display: none;
+    }
+    .main-nav {
+        display: none; /* Hide menu on mobile */
+    }
+  
+    .hamburger {
+      display: block;
+      position: absolute;
+    }
+  
+    .cta .btn {
+      display: none;
+    }
+  
+    .cta .btn {
+      background-color: #37d6ae;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  
+    .cta .btn:hover {
+      background-color: #2fb197;
+    }
+  }
+
+
+
+
+  .heroSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #25a6d9, #9be15d);
+    padding: 40px;
+    color: #fff;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 50px 0 60px;
+}
+
+.heroContent1 {
+    max-width: 50%;
+}
+
+.heroTitle {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.heroDescription {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    width: 417px;
+}
+
+.heroButton {
+    background-color: #ffcd3c;
+    color: #000;
+    padding: 15px 25px;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.heroButton:hover {
+    background-color: #ffac00;
+}
+
+.heroCredits {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.freepikLink {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.heroImage img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .heroContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .heroContent1 {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .heroImage img {
+        max-width: 100%;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroButton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .heroDescription {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+.educationSection {
+    padding: 50px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* Individual Cards */
+.card {
+    transform: scale(0.8) translateY(100px); /* Start small and below the viewport */
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Smooth transition */
+}
+
+
+.card:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cardContent {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.cardDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cardButton {
+    background-color: #ffcd3c;
+    color: #000;
+    padding: 12px 20px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cardButton:hover {
+    background-color: #ffac00;
+}
+
+.imageCredit {
+    font-size: 0.9rem;
+}
+
+.freepikLink {
+    color: #25a6d9;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
